@@ -45,9 +45,9 @@ object Question3 {
     }.toList
   }
 
-  def writeResultex3(data:List[(Int, Map[String, CalculatedStatistics])], filename: String = "transaction.txt") ={
+  def writeResultex3(data:List[(Int, Map[String, CalculatedStatistics])]) ={
 
-    val file = new File("exercise3")
+    val file = new File("question3")
     val bw = new BufferedWriter(new FileWriter(file))
 
     data.foreach{
