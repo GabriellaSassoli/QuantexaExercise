@@ -1,18 +1,15 @@
 package services
 
-import filesHandlers.ReadInput.{getInput, readInput}
-import filesHandlers.WriteFile.writeFile
-import model.{Transaction, TransactionTypes}
-import services.Question1.getTotalTransactionByDay
+import model.{FinalResponse, Transaction, TransactionTypes}
 
 import java.io.{BufferedWriter, File, FileWriter}
 
-object Question2 {
+object Question2 extends FinalResponse[Map[String,TransactionTypes]]{
 
   type TransactionByCategory = Map[String, List[Transaction]]
 
-  def getTransactionsByUserAndCategory(filename: String): Map[String, Map[String, Double]] = {
-    getInput(filename).groupBy(_.accountId).map {
+  def getTransactionsByUserAndCategory(transactions: List[Transaction]): Map[String, Map[String, BigDecimal]] = {
+    transactions.groupBy(_.accountId).map {
       case (accountId, transaction) => accountId ->
         transaction.groupBy(_.category)
           .map { case (category, transactions) =>
@@ -21,19 +18,29 @@ object Question2 {
     }
   }
 
-  def calculateAverage(data: List[Transaction]): Double = {
+  def calculateAverage(data: List[Transaction]): BigDecimal = {
     val average = data.collect(_.transactionAmount).sum / data.length
-    f"$average%1.2f".toDouble
+    BigDecimal.valueOf(average)
   }
 
-  // To improve this function putting map to case class. I have done this because not every transaction category is always taken into consideration. So needed to accounter to add a 0 field if that was the case. Also it makes it easier to print
-  def putValuesToTransactionType(data: Map[String, Map[String, Double]]): Map[String, TransactionTypes] =
+  def convertToTransactionTypesCaseClass(data: Map[String, Map[String, BigDecimal]]): Map[String, TransactionTypes] =
     data.map {
-      case (accountId, transaction) => accountId ->
-        TransactionTypes(transaction.getOrElse("AA", 0), transaction.getOrElse("BB", 0), transaction.getOrElse("CC", 0), transaction.getOrElse("DD", 0), transaction.getOrElse("EE", 0), transaction.getOrElse("FF", 0), transaction.getOrElse("GG", 0))
+      case (accountId, transaction) => accountId -> unApply(transaction)
     }
 
+  def unApply(ts: Map[String,BigDecimal]): TransactionTypes =
+    TransactionTypes(ts.getOrElse("AA",0), ts.getOrElse("BB",0),ts.getOrElse("CC",0),ts.getOrElse("DD",0),ts.getOrElse("EE",0),ts.getOrElse("FF",0),ts.getOrElse("GG",0))
 
-  def writeTransactionByAccount = writeFile(putValuesToTransactionType(getTransactionsByUserAndCategory("transaction.txt")), "exercise2")
+  override def exerciseSolver(transactions: List[Transaction]): Map[String, TransactionTypes] = convertToTransactionTypesCaseClass(getTransactionsByUserAndCategory(transactions))
+
+  override def writeFile(data: Map[String,TransactionTypes], fileName: String) = {
+    val file = new File(fileName)
+
+    val bw = new BufferedWriter(new FileWriter(file))
+    data.foreach{
+      case (accountID,transactionTypes) => bw.write(s"accountId: $accountID, average by transactionType: $transactionTypes\n")
+    }
+    bw.close()
+  }
 
 }

@@ -1,17 +1,29 @@
 package services
 
-import filesHandlers.ReadInput.{getInput, readInput}
-import filesHandlers.WriteFile.writeFile
-import model.TotalValue
+import model.{FinalResponse, Transaction}
 
-object Question1 {
+import java.io.{BufferedWriter, File, FileWriter}
 
-  def getTotalTransactionByDay(filename: String = "transaction.txt"): Map[Int, TotalValue] = {
-    getInput(filename).groupBy(_.transactionDay).map{case (day,transactions) =>
-      (day, TotalValue(transactions.collect(_.transactionAmount).sum))
+object Question1 extends FinalResponse[Map[Int, Double]] {
+
+  override def exerciseSolver(transactions: List[Transaction]): Map[Int, Double] = {
+    transactions.groupBy(_.transactionDay).map{case (day,transactions) =>
+      (day, transactions.collect(_.transactionAmount).sum)
     }
   }
 
-  def writeTransactionByDay = writeFile(getTotalTransactionByDay(), "question1")
+   override def writeFile(exerciseSolution: Map[Int, Double], fileName: String) = {
+
+    val file = new File(fileName)
+
+    val bw = new BufferedWriter(new FileWriter(file))
+
+    exerciseSolution.foreach{
+      case (day, totalValue)  => bw.write(s"day: $day, total value: $totalValue\n")
+    }
+
+    bw.close()
+  }
+
 
 }
