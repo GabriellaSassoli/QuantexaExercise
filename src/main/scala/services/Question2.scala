@@ -1,8 +1,11 @@
 package services
 
-import filesHandlers.ReadInput.getInput
+import filesHandlers.ReadInput.{getInput, readInput}
 import filesHandlers.WriteFile.writeFile
 import model.{Transaction, TransactionTypes}
+import services.Question1.getTotalTransactionByDay
+
+import java.io.{BufferedWriter, File, FileWriter}
 
 object Question2 {
 
@@ -13,7 +16,8 @@ object Question2 {
       case (accountId, transaction) => accountId ->
         transaction.groupBy(_.category)
           .map { case (category, transactions) =>
-            category -> calculateAverage(transactions) }
+            category -> calculateAverage(transactions)
+          }
     }
   }
 
@@ -29,5 +33,7 @@ object Question2 {
         TransactionTypes(transaction.getOrElse("AA", 0), transaction.getOrElse("BB", 0), transaction.getOrElse("CC", 0), transaction.getOrElse("DD", 0), transaction.getOrElse("EE", 0), transaction.getOrElse("FF", 0), transaction.getOrElse("GG", 0))
     }
 
+
   def writeTransactionByAccount = writeFile(putValuesToTransactionType(getTransactionsByUserAndCategory("transaction.txt")), "exercise2")
 
+}
