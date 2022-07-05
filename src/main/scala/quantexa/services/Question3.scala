@@ -1,18 +1,19 @@
 package quantexa.services
 
+import quantexa.{AccountId, DayNumber}
 import quantexa.model.{CalculatedStatistics, FinalResponse, Transaction}
 
-object Question3 extends FinalResponse[List[(Int, Map[String, CalculatedStatistics])]] {
+object Question3 extends FinalResponse[List[(DayNumber, Map[AccountId, CalculatedStatistics])]] {
+
+  def exerciseSolver(ts: List[Transaction]): List[(DayNumber, Map[AccountId, CalculatedStatistics])] =
+    (0 to getMaxDay(ts)).map { day =>
+      day -> calcStats(ts, day)
+    }.toList
 
   def getMaxDay(ts: List[Transaction]): Int =
     ts.collect(value => value.transactionDay).max
 
-  def getRollingTransactionById(transactions: List[Transaction], day: Int): Map[String, List[Transaction]] =
-    transactions
-      .filter(trans => trans.transactionDay >= day - 5 && trans.transactionDay < day)
-      .groupBy(_.accountId)
-
-  def calcStats(transactions: List[Transaction], day: Int): Map[String, CalculatedStatistics] = {
+  def calcStats(transactions: List[Transaction], day: DayNumber): Map[AccountId, CalculatedStatistics] = {
 
     // all transactions for date range, grouped by accountID
     val transactionsById: Map[String, List[Transaction]] = getRollingTransactionById(transactions, day)
@@ -34,21 +35,26 @@ object Question3 extends FinalResponse[List[(Int, Map[String, CalculatedStatisti
     }
   }
 
-  def sumByCategory(tsById: Map[String, List[Transaction]], category: String): Map[String, Double] =
+  def getRollingTransactionById(transactions: List[Transaction], day: DayNumber): Map[AccountId, List[Transaction]] =
+    transactions
+      .filter(trans => trans.transactionDay >= day - 5 && trans.transactionDay < day)
+      .groupBy(_.accountId)
+
+  def sumByCategory(tsById: Map[String, List[Transaction]], category: String): Map[AccountId, Double] =
     tsById.view.mapValues(_.filter(_.category == category))
       .mapValues(_.map(_.transactionAmount).sum).toMap
 
-  def exerciseSolver(ts: List[Transaction]): List[(Int, Map[String, CalculatedStatistics])] =
-    (0 to getMaxDay(ts)).map { day =>
-      day -> calcStats(ts, day)
-    }.toList
-
   override def name: String = "question3Solution"
 
-  override def exerciseFormatter(exerciseSolution: List[(Int, Map[String, CalculatedStatistics])]): String = exerciseSolution.map {
+  override def exerciseFormatter(exerciseSolution: List[(DayNumber, Map[AccountId, CalculatedStatistics])]): String = {
+    exerciseSolution.flatMap {
     case (k, v) =>
       v.map {
-        case (k2, v2) => s"day: $k, accountId: $k2, maximum: ${v2.max}, average: ${v2.average}, aa: ${v2.AATotalValue}, cc: ${v2.CCTotalValue}, ff: ${v2.FFTotalValue}\n"
+        case (k2, v2) => s"day: $k, accountId: $k2, maximum: ${v2.max}, average: ${v2.average}, aa: ${v2.AATotalValue}, cc: ${v2.CCTotalValue}, ff: ${v2.FFTotalValue}"
       }
   }.mkString("\n")
+
+  }
+
+
 }

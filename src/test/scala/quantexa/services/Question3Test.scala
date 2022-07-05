@@ -36,8 +36,7 @@ class Question3Test extends FlatSpec with Matchers {
 
   "exerciseSolver" should "return rolling calculate statistic" in {
     val input = List(Transaction("T000131","A27",4,"BB",3),Transaction("T000131","A27",5,"BB",2),Transaction("T000131","A27",6,"CC",2),Transaction("T00077","A13",2,"FF",516.34))
-    exerciseSolver(input) shouldBe List((5,Map("A27" -> CalculatedStatistics(3.0,0.0,0.0,0.0,3.0), "A13" -> CalculatedStatistics(516.34,516.34,0.0,0.0,516.34))), (6,Map("A27" -> CalculatedStatistics(3.0,2.5,0.0,0.0,0.0), "A13" -> CalculatedStatistics(516.34,516.34,0.0,0.0,516.34))))
-
+    exerciseSolver(input) shouldBe List((0,Map()), (1,Map()), (2,Map()), (3,Map("A13" -> CalculatedStatistics(516.34,516.34,0.0,0.0,516.34))), (4,Map("A13" -> CalculatedStatistics(516.34,516.34,0.0,0.0,516.34))), (5,Map("A27" -> CalculatedStatistics(3.0,3.0,0.0,0.0,0.0), "A13" -> CalculatedStatistics(516.34,516.34,0.0,0.0,516.34))), (6,Map("A27" -> CalculatedStatistics(3.0,2.5,0.0,0.0,0.0), "A13" -> CalculatedStatistics(516.34,516.34,0.0,0.0,516.34))))
   }
 
 }

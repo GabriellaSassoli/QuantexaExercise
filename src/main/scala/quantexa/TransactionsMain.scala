@@ -6,7 +6,7 @@ import quantexa.services.{Question1, Question2, Question3}
 
 object TransactionsMain extends App {
 
-  // If no file is read, error is thrown.
+  // If it's not possible to read a line in the file an error is thrown
   val transactions: List[Transaction] = readInput("transaction.txt")
   List(Question1, Question2, Question3).foreach(_.solveExercise(transactions))
 
