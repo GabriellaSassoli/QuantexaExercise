@@ -11,12 +11,12 @@ object Question3 extends FinalResponse[List[(DayNumber, Map[AccountId, Calculate
     }.toList
 
   def getMaxDay(ts: List[Transaction]): Int =
-    ts.collect(value => value.transactionDay).max
+    ts.collect(_.transactionDay).max
 
   def calcStats(transactions: List[Transaction], day: DayNumber): Map[AccountId, CalculatedStatistics] = {
 
     // all transactions for date range, grouped by accountID
-    val transactionsById: Map[String, List[Transaction]] = getRollingTransactionById(transactions, day)
+    val transactionsById: Map[AccountId, List[Transaction]] = getRollingTransactionById(transactions, day)
 
     // "AA", "CC", "FF" transactions sum by account id
     val aaSums = sumByCategory(transactionsById, "AA")
@@ -24,7 +24,7 @@ object Question3 extends FinalResponse[List[(DayNumber, Map[AccountId, Calculate
     val ffSums = sumByCategory(transactionsById, "FF")
 
     // transactions by accountId
-    val transactionsByAmount: Map[String, List[Double]] = transactionsById.view.mapValues(_.map(_.transactionAmount)).toMap
+    val transactionsByAmount: Map[AccountId, List[Double]] = transactionsById.view.mapValues(_.map(_.transactionAmount)).toMap
 
     // count of all transactions by account id
     val allCounts = transactionsById.view.mapValues(_.length)
