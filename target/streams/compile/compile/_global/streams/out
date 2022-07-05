@@ -1,4 +1,4 @@
-[0m[[0m[33mwarn[0m] [0m[0m/Users/sassolig/StudingProjects/QuantexaExercise/src/main/scala/filesHandlers/ReadInput.scala:25:12: This catches all Throwables. If this is really intended, use `case e : Throwable` to clear this warning.[0m
+[0m[[0m[33mwarn[0m] [0m[0m/Users/dsa25/Downloads/QuantexaExercise/src/main/scala/quantexa/filesHandlers/ReadInput.scala:25:12: This catches all Throwables. If this is really intended, use `case e : Throwable` to clear this warning.[0m
 [0m[[0m[33mwarn[0m] [0m[0m      case e => throw new Exception(s"Error reading file: $e")[0m
 [0m[[0m[33mwarn[0m] [0m[0m           ^[0m
 [0m[[0m[33mwarn[0m] [0m[0mone warning found[0m

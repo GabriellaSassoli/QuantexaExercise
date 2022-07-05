@@ -11,5 +11,4 @@ object TransactionsMain extends App {
   List(Question1, Question2, Question3).foreach(_.solveExercise(transactions))
 
   println("Process Completed")
-
 }

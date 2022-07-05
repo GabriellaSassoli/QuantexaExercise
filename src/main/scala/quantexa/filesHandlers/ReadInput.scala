@@ -2,29 +2,22 @@ package quantexa.filesHandlers
 
 import quantexa.model.Transaction
 
-import java.net.FileNameMap
 import scala.io.Source
-import scala.reflect.runtime.universe.{Throw, Try}
-import scala.util.{Failure, Success}
+import scala.util.{Failure, Success, Try}
 
 object ReadInput {
 
   def readInput(filename: String): List[Transaction] = {
-    try {
-      val transactionsLines = Source.fromResource(filename).getLines().drop(1)
+    val transactionsLines = Source.fromResource(filename).getLines().drop(1)
 
-      val transactions: List[Transaction] = transactionsLines.map {
-        line =>
-          val split = line.split(",")
-          Transaction(split(0), split(1), split(2).toInt, split(3), split(4).toDouble)
-      }.toList
-
-      transactions
-
-    } catch {
-      case e => throw new Exception(s"Error reading file: $e")
-    }
+    val transactions: List[Transaction] = transactionsLines.zipWithIndex.map {
+      case (line, index) =>
+        val split = line.split(",")
+        Try(Transaction(split(0), split(1), split(2).toInt, split(3), split(4).toDouble)) match {
+          case Success(transaction) => transaction
+          case Failure(ex) => throw new Exception(s"Failed to process file $filename at line $index because of ${ex.getMessage}")
+        }
+    }.toList
+    transactions
   }
-
-
 }
