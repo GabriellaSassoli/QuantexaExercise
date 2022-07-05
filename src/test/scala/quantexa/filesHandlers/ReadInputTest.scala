@@ -1,7 +1,7 @@
-package filesHandlers
+package quantexa.filesHandlers
 
-import filesHandlers.ReadInput.readInput
-import model.Transaction
+import quantexa.filesHandlers.ReadInput.readInput
+import quantexa.model.Transaction
 import org.scalatest.{FlatSpec, Matchers}
 
 class ReadInputTest extends FlatSpec with Matchers {

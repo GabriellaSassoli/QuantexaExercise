@@ -1,7 +1,7 @@
-package services
+package quantexa.services
 
 
-import model.{CalculatedStatistics, FinalResponse, Transaction}
+import quantexa.model.{CalculatedStatistics, FinalResponse, Transaction}
 
 import java.io.{BufferedWriter, File, FileWriter}
 import scala.collection.MapView

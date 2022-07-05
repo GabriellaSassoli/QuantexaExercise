@@ -1,8 +1,8 @@
-package services
+package quantexa.services
 
-import model.{CalculatedStatistics, Transaction}
+import quantexa.model.{CalculatedStatistics, Transaction}
 import org.scalatest.{FlatSpec, Matchers}
-import services.Question3.{calcStats, exerciseSolver, getMaxDay, getRollingTransactionById, sumByCategory}
+import quantexa.services.Question3.{calcStats, exerciseSolver, getMaxDay, getRollingTransactionById, sumByCategory}
 
 import scala.collection.immutable.HashMap
 

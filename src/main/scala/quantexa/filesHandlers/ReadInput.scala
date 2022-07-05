@@ -1,6 +1,6 @@
-package filesHandlers
+package quantexa.filesHandlers
 
-import model.Transaction
+import quantexa.model.Transaction
 
 import java.net.FileNameMap
 import scala.io.Source

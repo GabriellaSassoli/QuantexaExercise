@@ -1,9 +1,9 @@
-package services
+package quantexa.services
 
-import filesHandlers.ReadInput.readInput
-import model.TransactionTypes
+import quantexa.filesHandlers.ReadInput.readInput
+import quantexa.model.TransactionTypes
 import org.scalatest.{FlatSpec, Matchers}
-import services.Question2.{calculateAverage, getTransactionsByUserAndCategory, convertToTransactionTypesCaseClass, unApply}
+import quantexa.services.Question2.{calculateAverage, getTransactionsByUserAndCategory, convertToTransactionTypesCaseClass, unApply}
 
 import scala.collection.immutable.HashMap
 

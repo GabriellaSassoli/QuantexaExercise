@@ -1,8 +1,8 @@
-package services
+package quantexa.services
 
-import filesHandlers.ReadInput.readInput
+import quantexa.filesHandlers.ReadInput.readInput
 import org.scalatest.{FlatSpec, Matchers}
-import services.Question1.exerciseSolver
+import quantexa.services.Question1.exerciseSolver
 
 class Question1Test extends FlatSpec with Matchers {
 
