@@ -13,9 +13,10 @@ object Question3 extends FinalResponse[List[(Int, Map[String, CalculatedStatisti
   }
 
 
-  def getRollingTransactionById(transactions: List[Transaction], day: Int): Map[String, List[Transaction]] = transactions
-    .filter(trans => trans.transactionDay >= day - 5 && trans.transactionDay < day)
-    .groupBy(_.accountId)
+  def getRollingTransactionById(transactions: List[Transaction], day: Int): Map[String, List[Transaction]] =
+    transactions
+      .filter(trans => trans.transactionDay >= day - 5 && trans.transactionDay < day)
+      .groupBy(_.accountId)
 
   def calcStats(transactions: List[Transaction], day: Int): Map[String, CalculatedStatistics] = {
 
@@ -28,15 +29,15 @@ object Question3 extends FinalResponse[List[(Int, Map[String, CalculatedStatisti
     val ffSums = sumByCategory(transactionsById, "FF")
 
     // transactions by accountId
-    val transactionsByAmount: MapView[String, List[Double]] = transactionsById.view.mapValues(_.map(_.transactionAmount))
+    val transactionsByAmount: Map[String, List[Double]] = transactionsById.view.mapValues(_.map(_.transactionAmount)).toMap
 
     // count of all transactions by account id
     val allCounts = transactionsById.view.mapValues(_.length)
 
     // output is Map(account id -> (aaSum, allAve))
     transactionsByAmount.map { case (id, amounts) =>
-      id -> CalculatedStatistics(amounts.max,aaSums.getOrElse(id, 0.0), ccSums.getOrElse(id,0.0),ffSums.getOrElse(id, 0.0), amounts.sum/ allCounts(id))
-    }.toMap
+      id -> CalculatedStatistics(amounts.max,amounts.sum/allCounts(id) ,aaSums.getOrElse(id, 0.0), ccSums.getOrElse(id,0.0),ffSums.getOrElse(id, 0.0))
+    }
   }
 
   def sumByCategory(tsById: Map[String, List[Transaction]], category: String): Map[String, Double] =
@@ -44,7 +45,7 @@ object Question3 extends FinalResponse[List[(Int, Map[String, CalculatedStatisti
       .mapValues(_.map(_.transactionAmount).sum).toMap
 
   def exerciseSolver(ts: List[Transaction]): List[(Int, Map[String, CalculatedStatistics])] ={
-    (5 to getMaxDay(ts)).map{ day => // is 5 correct?
+   (0 to getMaxDay(ts)).map{ day => // is 5 correct?
       day -> calcStats(ts, day)
     }.toList
   }
