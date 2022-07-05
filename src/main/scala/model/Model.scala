@@ -9,7 +9,7 @@ trait FinalResponse[T]{
 
 case class Transaction(transactionId: String, accountId: String, transactionDay: Int, category: String, transactionAmount: Double)
 
-case class TransactionTypes(AA: BigDecimal, BB: BigDecimal, CC: BigDecimal, DD: BigDecimal,EE: BigDecimal,FF: BigDecimal,GG: BigDecimal)
+case class TransactionTypes(AA: Double, BB: Double, CC: Double, DD: Double,EE: Double,FF: Double,GG: Double)
 
 case class CalculatedStatistics(max: Double, average: Double, AATotalValue: Double, CCTotalValue: Double, FFTotalValue: Double)
 
