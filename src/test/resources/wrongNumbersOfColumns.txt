@@ -1,0 +1,3 @@
+transactionId,accountId,transactionDay,category,transactionAmount
+T0001,A27,1,GG
+T00077,A13,2,FF

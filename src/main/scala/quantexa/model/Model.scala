@@ -2,10 +2,13 @@ package quantexa.model
 
 import java.io.{BufferedWriter, File, FileWriter}
 
-trait FinalResponse[T]{
+trait FinalResponse[T] {
   def name: String
+
   def exerciseSolver(transactions: List[Transaction]): T
+
   def exerciseFormatter(exerciseSolution: T): String
+
   def writeFile(content: String): Unit = {
     val file = new File(name)
     val bw = new BufferedWriter(new FileWriter(file))

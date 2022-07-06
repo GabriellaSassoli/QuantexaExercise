@@ -9,8 +9,8 @@ object Question1 extends FinalResponse[Map[DayNumber, TotalValue]] {
     transactions.groupMapReduce(_.transactionDay)(_.transactionAmount)(_ + _)
 
   override def exerciseFormatter(exerciseSolution: Map[DayNumber, TotalValue]): String =
-    exerciseSolution.map{
-      case (day, totalValue)  => s"day: $day, total value: $totalValue"
+    exerciseSolution.map {
+      case (day, totalValue) => s"day: $day, total value: $totalValue"
     }.mkString("\n")
 
   override def name: String = "question1Solution"

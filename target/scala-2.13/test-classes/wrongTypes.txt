@@ -1,0 +1,4 @@
+transactionId,accountId,transactionDay,category,transactionAmount
+T0001,A27,A,AA,338.11
+T00077,A13,2,FF,516.34
+T000131,A39,4,BB,243.39

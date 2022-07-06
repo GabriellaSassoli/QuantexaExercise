@@ -48,11 +48,11 @@ object Question3 extends FinalResponse[List[(DayNumber, Map[AccountId, Calculate
 
   override def exerciseFormatter(exerciseSolution: List[(DayNumber, Map[AccountId, CalculatedStatistics])]): String = {
     exerciseSolution.flatMap {
-    case (k, v) =>
-      v.map {
-        case (k2, v2) => s"day: $k, accountId: $k2, maximum: ${v2.max}, average: ${v2.average}, aa: ${v2.AATotalValue}, cc: ${v2.CCTotalValue}, ff: ${v2.FFTotalValue}"
-      }
-  }.mkString("\n")
+      case (k, v) =>
+        v.map {
+          case (k2, v2) => s"day: $k, accountId: $k2, maximum: ${v2.max}, average: ${v2.average}, aa: ${v2.AATotalValue}, cc: ${v2.CCTotalValue}, ff: ${v2.FFTotalValue}"
+        }
+    }.mkString("\n")
 
   }
 

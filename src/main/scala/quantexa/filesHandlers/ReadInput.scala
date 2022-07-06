@@ -15,7 +15,7 @@ object ReadInput {
         val split = line.split(",")
         Try(Transaction(split(0), split(1), split(2).toInt, split(3), split(4).toDouble)) match {
           case Success(transaction) => transaction
-          case Failure(ex) => throw new Exception(s"Failed to process file $filename at line $index because of ${ex.getMessage}")
+          case Failure(ex) => throw new Exception(s"Failed to process file $filename at line ${index+1} because of ${ex.getMessage}")
         }
     }.toList
     transactions
