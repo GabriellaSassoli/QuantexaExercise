@@ -2,7 +2,7 @@ package quantexa.services
 
 import quantexa.{AccountId, Average, Category}
 import quantexa.model.{FinalResponse, Transaction}
-import scala.math._
+
 
 object Question2 extends FinalResponse[Map[AccountId, Map[Category, Average]]] {
 

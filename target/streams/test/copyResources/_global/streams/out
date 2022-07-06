@@ -1,0 +1,5 @@
+[0m[[0m[0mdebug[0m] [0m[0mCopy resource mappings: [0m
+[0m[[0m[0mdebug[0m] [0m[0m	(/Users/sassolig/StudingProjects/QuantexaExercise/src/test/resources/transactionTest.txt,/Users/sassolig/StudingProjects/QuantexaExercise/target/scala-2.13/test-classes/transactionTest.txt)[0m
+[0m[[0m[0mdebug[0m] [0m[0m	(/Users/sassolig/StudingProjects/QuantexaExercise/src/test/resources/wrongNumbersOfColumns.txt,/Users/sassolig/StudingProjects/QuantexaExercise/target/scala-2.13/test-classes/wrongNumbersOfColumns.txt)[0m
+[0m[[0m[0mdebug[0m] [0m[0m	(/Users/sassolig/StudingProjects/QuantexaExercise/src/test/resources/wrongTypes.txt,/Users/sassolig/StudingProjects/QuantexaExercise/target/scala-2.13/test-classes/wrongTypes.txt)[0m
+[0m[[0m[0mdebug[0m] [0m[0m	(/Users/sassolig/StudingProjects/QuantexaExercise/src/test/resources/wrongText.txt,/Users/sassolig/StudingProjects/QuantexaExercise/target/scala-2.13/test-classes/wrongText.txt)[0m

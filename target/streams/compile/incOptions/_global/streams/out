@@ -1,25 +1,2 @@
 [0m[[0m[0mdebug[0m] [0m[0mCreated transactional ClassFileManager with tempDir = /Users/sassolig/StudingProjects/QuantexaExercise/target/scala-2.13/classes.bak[0m
-[0m[[0m[0mdebug[0m] [0m[0mAbout to delete class files:[0m
-[0m[[0m[0mdebug[0m] [0m[0mWe backup class files:[0m
-[0m[[0m[0mdebug[0m] [0m[0mRegistering generated classes:[0m
-[0m[[0m[0mdebug[0m] [0m[0m	Transaction.class[0m
-[0m[[0m[0mdebug[0m] [0m[0m	package.class[0m
-[0m[[0m[0mdebug[0m] [0m[0m	ReadInput$.class[0m
-[0m[[0m[0mdebug[0m] [0m[0m	TransactionsMain.class[0m
-[0m[[0m[0mdebug[0m] [0m[0m	package$.class[0m
-[0m[[0m[0mdebug[0m] [0m[0m	CalculatedStatistics.class[0m
-[0m[[0m[0mdebug[0m] [0m[0m	Question3.class[0m
-[0m[[0m[0mdebug[0m] [0m[0m	TransactionsMain$.class[0m
-[0m[[0m[0mdebug[0m] [0m[0m	FinalResponse.class[0m
-[0m[[0m[0mdebug[0m] [0m[0m	Question3$$anonfun$getMaxDay$1.class[0m
-[0m[[0m[0mdebug[0m] [0m[0m	Question1.class[0m
-[0m[[0m[0mdebug[0m] [0m[0m	Question2$$anonfun$calculateAverage$1.class[0m
-[0m[[0m[0mdebug[0m] [0m[0m	Question3$.class[0m
-[0m[[0m[0mdebug[0m] [0m[0m	TransactionsMain$delayedInit$body.class[0m
-[0m[[0m[0mdebug[0m] [0m[0m	Question2.class[0m
-[0m[[0m[0mdebug[0m] [0m[0m	Question1$.class[0m
-[0m[[0m[0mdebug[0m] [0m[0m	Transaction$.class[0m
-[0m[[0m[0mdebug[0m] [0m[0m	Question2$.class[0m
-[0m[[0m[0mdebug[0m] [0m[0m	ReadInput.class[0m
-[0m[[0m[0mdebug[0m] [0m[0m	CalculatedStatistics$.class[0m
 [0m[[0m[0mdebug[0m] [0m[0mRemoving the temporary directory used for backing up class files: /Users/sassolig/StudingProjects/QuantexaExercise/target/scala-2.13/classes.bak[0m

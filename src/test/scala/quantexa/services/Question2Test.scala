@@ -21,7 +21,7 @@ class Question2Test extends FlatSpec with Matchers {
 
   "calculateAverage" should "calculate average" in {
     val input = readInput("transactionTest.txt")
-    calculateAverage(input) shouldBe 365.9466666666667
+    calculateAverage(input) shouldBe 365.95
   }
 
 }

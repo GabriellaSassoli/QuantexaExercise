@@ -2,7 +2,6 @@ package quantexa.services
 
 import quantexa.{DayNumber, TotalValue}
 import quantexa.model.{FinalResponse, Transaction}
-import scala.math._
 
 object Question1 extends FinalResponse[Map[DayNumber, TotalValue]] {
 

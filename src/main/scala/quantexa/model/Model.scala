@@ -19,6 +19,10 @@ trait FinalResponse[T] {
 
   def solveExercise(transactions: List[Transaction]) =
     writeFile(exerciseFormatter(exerciseSolver(transactions)))
+
+  def round(value: Double) =
+    BigDecimal(value).setScale(2, BigDecimal.RoundingMode.HALF_UP).toDouble
+
 }
 
 case class Transaction(transactionId: String, accountId: String, transactionDay: Int, category: String, transactionAmount: Double)

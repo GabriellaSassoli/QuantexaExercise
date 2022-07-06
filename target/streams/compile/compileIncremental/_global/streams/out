@@ -1,20 +1,6 @@
 [0m[[0m[0mdebug[0m] [0m[0m[zinc] IncrementalCompile -----------[0m
 [0m[[0m[0mdebug[0m] [0m[0mIncrementalCompile.incrementalCompile[0m
-[0m[[0m[0mdebug[0m] [0m[0mprevious = Stamps for: 0 products, 0 sources, 0 libraries[0m
+[0m[[0m[0mdebug[0m] [0m[0mprevious = Stamps for: 20 products, 7 sources, 1 libraries[0m
 [0m[[0m[0mdebug[0m] [0m[0mcurrent source = Set(${BASE}/src/main/scala/quantexa/TransactionsMain.scala, ${BASE}/src/main/scala/quantexa/filesHandlers/ReadInput.scala, ${BASE}/src/main/scala/quantexa/services/Question1.scala, ${BASE}/src/main/scala/quantexa/services/Question2.scala, ${BASE}/src/main/scala/quantexa/package.scala, ${BASE}/src/main/scala/quantexa/model/Model.scala, ${BASE}/src/main/scala/quantexa/services/Question3.scala)[0m
-[0m[[0m[0mdebug[0m] [0m[0m> initialChanges = InitialChanges(Changes(added = Set(${BASE}/src/main/scala/quantexa/filesHandlers/ReadInput.scala, ${BASE}/src/main/scala/quantexa/services/Question3.scala, ${BASE}/src/main/scala/quantexa/model/Model.scala, ${BASE}/src/main/scala/quantexa/services/Question2.scala, ${BASE}/src/main/scala/quantexa/TransactionsMain.scala, ${BASE}/src/main/scala/quantexa/package.scala, ${BASE}/src/main/scala/quantexa/services/Question1.scala), removed = Set(), changed = Set(), unmodified = ...),Set(),Set(),API Changes: Set())[0m
-[0m[[0m[0mdebug[0m] [0m[0mFull compilation, no sources in previous analysis.[0m
-[0m[[0m[0mdebug[0m] [0m[0mall 7 sources are invalidated[0m
-[0m[[0m[0mdebug[0m] [0m[0mInitial set of included nodes: [0m
-[0m[[0m[0mdebug[0m] [0m[0mRecompiling all sources: number of invalidated sources > 50.0% of all sources[0m
-[0m[[0m[0mdebug[0m] [0m[0mcompilation cycle 1[0m
-[0m[[0m[0minfo[0m] [0m[0mcompiling 7 Scala sources to /Users/sassolig/StudingProjects/QuantexaExercise/target/scala-2.13/classes ...[0m
-[0m[[0m[0mdebug[0m] [0m[0mGetting org.scala-sbt:compiler-bridge_2.13:1.6.0:compile for Scala 2.13.8[0m
-[0m[[0m[0mdebug[0m] [0m[0m[zinc] Running cached compiler caf5bfb for Scala compiler version 2.13.8[0m
-[0m[[0m[0mdebug[0m] [0m[0m[zinc] The Scala compiler is invoked with:[0m
-[0m[[0m[0mdebug[0m] [0m[0m	-bootclasspath[0m
-[0m[[0m[0mdebug[0m] [0m[0m	/Users/sassolig/Library/Caches/Coursier/v1/https/repo1.maven.org/maven2/org/scala-lang/scala-library/2.13.8/scala-library-2.13.8.jar[0m
-[0m[[0m[0mdebug[0m] [0m[0m	-classpath[0m
-[0m[[0m[0mdebug[0m] [0m[0m	/Users/sassolig/StudingProjects/QuantexaExercise/target/scala-2.13/classes:/Users/sassolig/Library/Caches/Coursier/v1/https/repo1.maven.org/maven2/com/typesafe/scala-logging/scala-logging_2.13/3.9.2/scala-logging_2.13-3.9.2.jar:/Users/sassolig/Library/Caches/Coursier/v1/https/repo1.maven.org/maven2/org/scala-lang/scala-reflect/2.13.8/scala-reflect-2.13.8.jar:/Users/sassolig/Library/Caches/Coursier/v1/https/repo1.maven.org/maven2/org/slf4j/slf4j-api/1.7.26/slf4j-api-1.7.26.jar[0m
-[0m[[0m[0mdebug[0m] [0m[0mScala compilation took 3.69281185 s[0m
-[0m[[0m[0mdebug[0m] [0m[0mdone compiling[0m
+[0m[[0m[0mdebug[0m] [0m[0m> initialChanges = InitialChanges(Changes(added = Set(), removed = Set(), changed = Set(), unmodified = ...),Set(),Set(),API Changes: Set())[0m
+[0m[[0m[0mdebug[0m] [0m[0mNo changes[0m

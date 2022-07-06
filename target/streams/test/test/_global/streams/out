@@ -1,0 +1,41 @@
+[0m[[0m[0mdebug[0m] [0m[0mRunning TaskDef(quantexa.filesHandlers.ReadInputTest, org.scalatest.tools.Framework$$anon$1@6f087793, false, [SuiteSelector])[0m
+[0m[[0m[0mdebug[0m] [0m[0mRunning TaskDef(quantexa.services.Question1Test, org.scalatest.tools.Framework$$anon$1@6f087793, false, [SuiteSelector])[0m
+[0m[[0m[0mdebug[0m] [0m[0mRunning TaskDef(quantexa.services.Question2Test, org.scalatest.tools.Framework$$anon$1@6f087793, false, [SuiteSelector])[0m
+[0m[[0m[0mdebug[0m] [0m[0mRunning TaskDef(quantexa.services.Question3Test, org.scalatest.tools.Framework$$anon$1@6f087793, false, [SuiteSelector])[0m
+[0m[[0m[0minfo[0m] [0m[0m[32mQuestion3Test:[0m[0m
+[0m[[0m[0minfo[0m] [0m[0m[32mexerciseSolver[0m[0m
+[0m[[0m[0minfo[0m] [0m[0m[32m- should return rolling calculate statistic[0m[0m
+[0m[[0m[0minfo[0m] [0m[0m[32mgetMaxDay[0m[0m
+[0m[[0m[0minfo[0m] [0m[0m[32m- should return max day in input list[0m[0m
+[0m[[0m[0minfo[0m] [0m[0m[32mcalcStats[0m[0m
+[0m[[0m[0minfo[0m] [0m[0m[32m- should return a map of statics by userID[0m[0m
+[0m[[0m[0minfo[0m] [0m[0m[32mgetRollingTransactionById[0m[0m
+[0m[[0m[0minfo[0m] [0m[0m[32m- should return rolling transaction[0m[0m
+[0m[[0m[0minfo[0m] [0m[0m[32msumByCategory[0m[0m
+[0m[[0m[0minfo[0m] [0m[0m[32m- should return the some of input by category[0m[0m
+[0m[[0m[0minfo[0m] [0m[0m[32mReadInputTest:[0m[0m
+[0m[[0m[0minfo[0m] [0m[0m[32mreadInput[0m[0m
+[0m[[0m[0minfo[0m] [0m[0m[32m- should read input from file[0m[0m
+[0m[[0m[0minfo[0m] [0m[0m[32m- should Throw an error in case empty lines added[0m[0m
+[0m[[0m[0minfo[0m] [0m[0m[32m- should Throw an error in case number of lines of a column is incorrect[0m[0m
+[0m[[0m[0minfo[0m] [0m[0m[32m- should Throw an error in case type of a value in a column is incorrect[0m[0m
+[0m[[0m[0minfo[0m] [0m[0m[32mQuestion1Test:[0m[0m
+[0m[[0m[0minfo[0m] [0m[0m[32mexerciseSolver[0m[0m
+[0m[[0m[0minfo[0m] [0m[0m[32m- should return total transaction by day[0m[0m
+[0m[[0m[0minfo[0m] [0m[0m[32mQuestion2Test:[0m[0m
+[0m[[0m[0minfo[0m] [0m[0m[32mexerciseSolver[0m[0m
+[0m[[0m[0minfo[0m] [0m[0m[32m- should return the average transaction grouped by userID and Category[0m[0m
+[0m[[0m[0minfo[0m] [0m[0m[32mgetTransactionsByUserAndCategory[0m[0m
+[0m[[0m[0minfo[0m] [0m[0m[32m- should group transaction by userId and Category[0m[0m
+[0m[[0m[0minfo[0m] [0m[0m[32mcalculateAverage[0m[0m
+[0m[[0m[0minfo[0m] [0m[0m[32m- should calculate average[0m[0m
+[0m[[0m[0minfo[0m] [0m[0m[36mRun completed in 291 milliseconds.[0m[0m
+[0m[[0m[0minfo[0m] [0m[0m[36mTotal number of tests run: 13[0m[0m
+[0m[[0m[0minfo[0m] [0m[0m[36mSuites: completed 4, aborted 0[0m[0m
+[0m[[0m[0minfo[0m] [0m[0m[36mTests: succeeded 13, failed 0, canceled 0, ignored 0, pending 0[0m[0m
+[0m[[0m[0minfo[0m] [0m[0m[32mAll tests passed.[0m[0m
+[0m[[0m[0mdebug[0m] [0m[0mPassed tests:[0m
+[0m[[0m[0mdebug[0m] [0m[0m	quantexa.services.Question3Test[0m
+[0m[[0m[0mdebug[0m] [0m[0m	quantexa.services.Question1Test[0m
+[0m[[0m[0mdebug[0m] [0m[0m	quantexa.services.Question2Test[0m
+[0m[[0m[0mdebug[0m] [0m[0m	quantexa.filesHandlers.ReadInputTest[0m
