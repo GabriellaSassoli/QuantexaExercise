@@ -15,7 +15,7 @@ class ReadInputTest extends FlatSpec with Matchers {
     val caught = intercept[Exception] {
       readInput("wrongText.txt")
     }
-    caught.getMessage.contains("Failed to process file wrongText.txt at line 1 because of Index 1 out of bounds for length 1") shouldBe true
+    caught.getMessage should contain("Failed to process file wrongText.txt at line 1 because of Index 1")
   }
 
   it should "Throw an error in case number of lines of a column is incorrect" in {
@@ -23,7 +23,7 @@ class ReadInputTest extends FlatSpec with Matchers {
     val caught = intercept[Exception] {
       readInput("wrongNumbersOfColumns.txt")
     }
-    caught.getMessage.contains("Failed to process file wrongNumbersOfColumns.txt at line 1 because of Index 4 out of bounds for length 4") shouldBe true
+    caught.getMessage should contain("Failed to process file wrongNumbersOfColumns.txt at line 1 because of Index 4")
   }
 
   it should "Throw an error in case type of a value in a column is incorrect" in {
@@ -31,7 +31,7 @@ class ReadInputTest extends FlatSpec with Matchers {
     val caught = intercept[Exception] {
       readInput("wrongTypes.txt")
     }
-    caught.getMessage.contains("Failed to process file wrongTypes.txt at line 1 because of For input string: \"A\"") shouldBe true
+    caught.getMessage shouldBe "Failed to process file wrongTypes.txt at line 1 because of For input string: \"A\""
   }
 
 }
