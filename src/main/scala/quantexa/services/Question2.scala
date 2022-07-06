@@ -2,6 +2,7 @@ package quantexa.services
 
 import quantexa.{AccountId, Average, Category}
 import quantexa.model.{FinalResponse, Transaction}
+import scala.math._
 
 object Question2 extends FinalResponse[Map[AccountId, Map[Category, Average]]] {
 
@@ -17,7 +18,7 @@ object Question2 extends FinalResponse[Map[AccountId, Map[Category, Average]]] {
     }
 
   def calculateAverage(data: List[Transaction]): Average =
-    data.collect(_.transactionAmount).sum / data.length
+    round(data.collect(_.transactionAmount).sum / data.length)
 
   override def exerciseSolver(transactions: List[Transaction]): Map[AccountId, Map[Category, Average]] = {
     val categories = transactions.groupBy(_.category).keys

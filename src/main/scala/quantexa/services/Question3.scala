@@ -2,6 +2,7 @@ package quantexa.services
 
 import quantexa.{AccountId, DayNumber}
 import quantexa.model.{CalculatedStatistics, FinalResponse, Transaction}
+import scala.math._
 
 object Question3 extends FinalResponse[List[(DayNumber, Map[AccountId, CalculatedStatistics])]] {
 
@@ -50,7 +51,7 @@ object Question3 extends FinalResponse[List[(DayNumber, Map[AccountId, Calculate
     exerciseSolution.flatMap {
       case (k, v) =>
         v.map {
-          case (k2, v2) => s"day: $k, accountId: $k2, maximum: ${v2.max}, average: ${v2.average}, aa: ${v2.AATotalValue}, cc: ${v2.CCTotalValue}, ff: ${v2.FFTotalValue}"
+          case (k2, v2) => s"day: $k, accountId: $k2, maximum: ${round(v2.max)}, average: ${round(v2.average)}, aa: ${round(v2.AATotalValue)}, cc: ${round(v2.CCTotalValue)}, ff: ${round(v2.FFTotalValue)}"
         }
     }.mkString("\n")
 

@@ -2,6 +2,7 @@ package quantexa.services
 
 import quantexa.{DayNumber, TotalValue}
 import quantexa.model.{FinalResponse, Transaction}
+import scala.math._
 
 object Question1 extends FinalResponse[Map[DayNumber, TotalValue]] {
 
@@ -10,7 +11,7 @@ object Question1 extends FinalResponse[Map[DayNumber, TotalValue]] {
 
   override def exerciseFormatter(exerciseSolution: Map[DayNumber, TotalValue]): String =
     exerciseSolution.map {
-      case (day, totalValue) => s"day: $day, total value: $totalValue"
+      case (day, totalValue) => s"day: $day, total value: ${round(totalValue)}"
     }.mkString("\n")
 
   override def name: String = "question1Solution"
